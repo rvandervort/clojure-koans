@@ -5,16 +5,16 @@
 
 (meditations
   "Functions are often defined before they are used"
-  (= __ (multiply-by-ten 2))
+  (= 20 (multiply-by-ten 2))
 
   "But they can also be defined inline"
-  (= __ ((fn [n] (* __ n)) 2))
+  (= 34 ((fn [n] (* 17 n)) 2))
 
   "Or using even shorter syntax"
-  (= __ (#(* 15 %) __))
+  (= 30 (#(* 15 %) 2))
 
   "Short anonymous functions may take multiple arguments"
-  (= __ (#(+ %1 %2 %3) 4 5 6))
+  (= ((fn [a,b,c] (+ a b c)) 4 5 6) (#(+ %1 %2 %3) 4 5 6))
 
   "One function can beget another"
   (= __ ((fn []
